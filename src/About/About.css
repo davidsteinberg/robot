@@ -1,0 +1,32 @@
+.About.hidden {
+  transform: translateX(-100%);
+}
+
+.About > .container {
+  max-width: var(--width-max);
+  height: 100%;
+  margin: auto;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow: auto;
+}
+
+.About.hidden > .container {
+  overflow: hidden;
+}
+
+.About > .container > .header {
+  font-size: var(--font-size-about-title);
+}
+
+.About > .container > .text {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: var(--font-size-about-text);
+}
+
+.About > .container > .text > a {
+  color: var(--color-foreground);
+  padding-bottom: 4rem;
+}

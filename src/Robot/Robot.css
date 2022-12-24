@@ -1,0 +1,42 @@
+.Robot {
+  --scale-factor: 0;
+  --transition-duration: 0s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition-property: transform;
+  transition-duration: var(--transition-duration);
+}
+
+.Robot.hidden {
+  transform: translateY(100%);
+}
+
+.Robot > :is(.body, .shadow) > .part {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--scale-factor) * var(--width));
+  height: calc(var(--scale-factor) * var(--height));
+  transition-property: transform;
+  transition-duration: var(--transition-duration);
+}
+
+.Robot > .body > .part {
+  background-color: var(--color-foreground);
+}
+
+/* Shadow */
+.Robot > .shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0.5rem, 0.4rem);
+  filter: brightness(90%);
+}
+
+.Robot > .shadow > .part {
+  background-color: var(--color-background);
+}

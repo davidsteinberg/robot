@@ -1,0 +1,17 @@
+.Content {
+  user-select: none;
+}
+
+.Content.hidden {
+  transform: translateX(100%);
+}
+
+.Content > .container {
+  height: 100%;
+  max-width: var(--width-max);
+  margin: auto;
+  padding-top: 0.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+}

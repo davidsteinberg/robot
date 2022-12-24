@@ -1,0 +1,9 @@
+.Burst {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: var(--color-foreground);
+  filter: opacity(0.1);
+  transition-property: transform filter;
+}

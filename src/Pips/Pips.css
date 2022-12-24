@@ -1,0 +1,13 @@
+.Pips {
+  width: 100%;
+  height: min-content;
+  max-height: 1.5rem;
+}
+
+.Pips.hidden {
+  visibility: hidden;
+}
+
+.Pips > .pip {
+  stroke-width: 1px;
+}

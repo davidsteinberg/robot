@@ -1,0 +1,29 @@
+.Prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition-property: transform;
+}
+
+.Prompt.hidden {
+  transform: translateY(calc(-50% - 0.35rem));
+}
+
+.Prompt > .text,
+.Prompt > .pips-container {
+  height: 50%;
+}
+
+.Prompt > .text {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  font-size: var(--font-size-prompt);
+}

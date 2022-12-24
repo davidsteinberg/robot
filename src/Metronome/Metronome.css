@@ -1,0 +1,13 @@
+.Metronome {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 1px;
+  transition-property: transform;
+  transform: translateX(0);
+}
+
+.Metronome.tick {
+  transform: translateX(1px);
+}

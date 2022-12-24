@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# The Robot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's a dancing robot!
 
-## Available Scripts
+### The robot
 
-In the project directory, you can run:
+The robot is composed of 10 rectangles representing its head, torso, and arm and leg tops and bottoms.
 
-### `npm start`
+A new pose is generated each beat. To do so, each rectangle is randomly rotated within a range of allowed angles, and they are all pinned to each other using some good ol' geometry.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The pose is randomly shifted left or right, making sure to keep the robot mostly on-screen. The lowest leg's bottom is pinned to the bottom of the screen.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The rhythm
 
-### `npm test`
+After 4 taps, the time between each tap is averaged. This is used to calculate the song's beats per minute. If a tap doesn't occur within 2 seconds, the previous taps are cleared.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A metronome is set to tick every beat, causing a new pose to be generated. The metronome pauses when the screen is tapped and restarts after the fourth sequential tap.
 
-### `npm run build`
+Due to JavaScript's inherent lack of accurate timing using `setTimeout, the timing is based on CSS animation iterations. If you know of a more elegant solution, I'd love to know!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app is built with [React][1], using [Create React App][2] to set up the project. [Prettier][3] is used to format the code.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### The license
 
-### `npm run eject`
+The software in this project is released under an [MIT license][4].
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### The future
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Offer a mechanism to immediately switch to half or double bpm, so you don't have to interrupt movement to tap it out.
+2. Allow for a wider range of limb movement. Base new positions off of previous positions and bottom angle ranges off of top angles.
+3. "Listen" using the microphone and determine bpm, altering speed according to song changes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[1]: https://reactjs.org
+[2]: https://create-react-app.dev
+[3]: https://prettier.io
+[4]: LICENSE
